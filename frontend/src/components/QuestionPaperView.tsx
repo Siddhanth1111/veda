@@ -27,7 +27,7 @@ export const QuestionPaperView: React.FC<Props> = ({ paperData }) => {
     const pdfWidth = pdf.internal.pageSize.getWidth();
     const pdfHeight = pdf.internal.pageSize.getHeight();
     
-    const imgProps = pdf.getImageProperties(imgData);
+    const imgProps = (pdf as any).getImageProperties(imgData);
     const imgHeight = (imgProps.height * pdfWidth) / imgProps.width;
     
     // If the image is longer than one page, jsPDF addImage will just scale it down or we can just stick it to 1 long page
