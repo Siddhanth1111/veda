@@ -80,7 +80,7 @@ export const CreateAssignmentForm = () => {
         documentImage: uploadedFile
       };
 
-      const response = await fetch(`\$\{process.env.NEXT_PUBLIC_API_URL || 'http://localhost:5000'\}/api/assignments`, {
+      const response = await fetch(`${process.env.NEXT_PUBLIC_API_URL || 'http://localhost:5000'}/api/assignments`, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify(payload),

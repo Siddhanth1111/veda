@@ -18,7 +18,7 @@ export default function AssignmentPage() {
 
     const checkInitialStatus = async () => {
       try {
-        const res = await fetch(`\$\{process.env.NEXT_PUBLIC_API_URL || 'http://localhost:5000'\}/api/assignments/${id}`);
+        const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL || 'http://localhost:5000'}/api/assignments/${id}`);
         const data = await res.json();
         
         if (data.success) {
